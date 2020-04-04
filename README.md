@@ -1,4 +1,3 @@
-# Project 2
 
 ## USER STORY
 Social media has done a lot to bring people together by allowing people to share their stories, thoughts, ideas, etc. across the internet. It has also brought about a lot of negativity in the form of trolls, random people posting derogatory comments, and a host of other undesirable online behavior. Our application seeks to bring people even closer together by allowing them to create micro-social networks that they can limit membership to. This allows groups to filter out trolls, random users, etc. 

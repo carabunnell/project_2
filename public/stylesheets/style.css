@@ -4,4 +4,10 @@ form.login {
 }
   /* this entire style sheet here only contains modal css */
   /* The Modal (background) */
-
+.imagefluid {
+  width: 100%;
+  height: auto;
+}
+.profile-member-welcome {
+  text-align: center;
+}

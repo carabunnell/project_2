@@ -24,14 +24,15 @@ $(document).ready(function () {
     var newDiv = $("<div>");
     newDiv.text(`Your new Storybook, ${bookTitle.val()} has been succuessfully created!`);
     $(".modal-footer").append(newDiv);
-    var newBtn = $("<button>");
+    var newBtn = $("<a>");
     newBtn.text(`${bookTitle.val()}`);
+    newBtn.attr("href", "/storybook");
     $(".navbar-header").append(newBtn);
     newBtn.addClass("users-storybook btn btn-primary");
   });
 
   $(".users-storybook").on("click", function() {
-    
+
   });
 //btn to create the user's story. This button will be moved once
   $(".create-story-temp-btn").on("click", function() {

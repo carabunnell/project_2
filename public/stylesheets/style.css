@@ -11,3 +11,15 @@ form.login {
 .profile-member-welcome {
   text-align: center;
 }
+
+body {
+  background-color: bisque;
+}
+
+footer {
+  background-color: white;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+}

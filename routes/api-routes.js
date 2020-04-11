@@ -62,12 +62,6 @@ module.exports = function (app) {
     }
   });
 
-  // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
-    db.Stories.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
 
   // GET route for getting all of the posts
   app.get("/api/posts", function(req, res) {
@@ -100,6 +94,37 @@ module.exports = function (app) {
       res.json(dbPost);
     });
   });
+
+  // POST route for saving a new post
+  app.post("/api/posts", function(req, res) {
+    db.Stories.create(req.body).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // DELETE route for deleting posts
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Stories.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+  
+  // PUT route for updating posts
+  app.put("/api/posts", function(req, res) {
+    db.Stories.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
 };
 
-// now once they sign in, they will see the storyboard they have been added to. they can delete themself or not delete themself from it. and they can crete a new room or a new storybook.

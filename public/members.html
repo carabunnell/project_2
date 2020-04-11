@@ -24,27 +24,11 @@
         <a class="navbar-brand logout-btn" href="/logout">
           Logout
         </a>
-        <a class="navbar-brand create-story-temp-btn" href="/storybook">
-          Temporary Create Story Btn
-        </a>
-        <!--calling bootstrap modal-->
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Launch demo modal
         </button>
         
-        <!-- Triggers Modal-->
-        <!-- <button id="myBtn">Open Modal</button> -->
-        <!-- The Modal-->
-        <!-- <div id="myModal" class="modal">
-        Modal content
-        <div class="modal-content">
-          <span class="close">$times;</span>
-          <p>Some text in the modal..</p>
-        </div>
-      </div> -->
-        <!-- End of Modal-->
-
       </div>
     </div>
   </nav>
@@ -84,11 +68,26 @@
   </div>
   <!--bootstrap end modal-->
 
-
+  <div class="profile-div">
+    <img class="imagefluid" src="stylesheets/download-1.jpg">
+    </div>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome<span class="member-name"></span></h2>
+        <br>
+        <h1 class="profile-member-welcome">Welcome <span class="member-name"></span></h1>
+        <br>
+        <h4>Your StoryBooks</h4>
+          <div class="card">
+            <div class="card-header"><a class="btn btn-light" href="/storybook">Adventures</a><button><a class="btn btn-light" href="/cms">New Post</a></button><button>
+              <a class="btn btn-light" href="/authors">View/Edit Authors</a></button></div>
+            <div class="card-body"></div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-header">Cars, Cars and More Cars (inactive)</div>
+            <div class="card-body"></div>
+          </div>
       </div>
     </div>
   </div>

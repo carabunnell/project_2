@@ -33,4 +33,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/storybook.html"));
   });
 
+  // cms route loads cms.html
+  app.get("/cms", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/cms.html"));
+  });
+
+  // authors route loads author-manager.html
+  app.get("/authors", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  });
+
 };

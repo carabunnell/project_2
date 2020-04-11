@@ -1,13 +1,137 @@
+* {
+  transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, .57);
+  transition-duration: .1s;
+}
+
 form.signup,
 form.login {
-  margin-top: 50px;
+margin-top: 50px;
 }
-  /* this entire style sheet here only contains modal css */
-  /* The Modal (background) */
+/* this entire style sheet here only contains modal css */
+/* The Modal (background) */
 .imagefluid {
-  width: 100%;
-  height: auto;
+width: 100%;
+height: auto;
 }
 .profile-member-welcome {
+text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h3 {
+  padding-right: 5vw;
+  font-family: 'Pacifico', cursive;
+}
+
+body {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
+  max-width: 100vw;
+  background-color: lightgoldenrodyellow;
+}
+
+.bodywrapper {
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-flow: row nowrap;
+}
+
+.banner{
+  float: left;
+}
+
+.navbar {
+  margin-top: 5vh;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-end;
+  font-family: 'Luckiest Guy', cursive;
+  color: black;
+  padding: 35px;
+  
+}
+
+span {
+  text-align: right;
+  padding-top: 8px;
+  margin: 8px 10px 5px 10px;
+}
+
+span:hover {
+  margin: 0vw 2vw 0vw 0vw;
+  color: black;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+h1 {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: -3vw;
+  margin-left: 2vw;
+  font-family: 'Pacifico', cursive;
+}
+
+.labelwrap {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.title {
+  font-family: sans-serif;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.body {
+  font-family: sans-serif;
+  outline: none;
+  height: 300px;
+}
+
+fieldset {
+  border-style: none;
+}
+
+.form__submit-button {
+  margin-top: 10px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+}
+
+.form__submit-button input {
+  font-size: 20px;
+  background-color: none;
+  border-style: none;
+  color: darkgreen;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.form__submit-button input:hover {
+  color: black;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+footer {
+
+  font-size: 75%;
   text-align: center;
+  font-style: italic;
+  padding: 20px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }

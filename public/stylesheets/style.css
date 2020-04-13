@@ -12,8 +12,8 @@ form.login {
   text-align: center;
 }
 
-body {
-  background-color: bisque;
+.nav {
+  display: inline;
 }
 
 footer {

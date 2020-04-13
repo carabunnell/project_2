@@ -14,21 +14,21 @@
 
 <body>
   <img src="img/scrawl_logoTiny.png" alt="Scrawl Logo">
-
-  <div class="container blog">
-    <div class="row">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/cms">New Post</a>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/authors">Manage Authors</a>
-      </div>
-
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li><a href="members.html">Home</a></li>
+          <li><a href="/cms">New Post</a></li>
+          <li><a href="/authors">Manage Authors</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+  </nav>
+  </div>
+  <div class="row">
+    <div class="col-md-12 blog-container">
     </div>
-    <div class="row">
-      <div class="col-md-12 blog-container">
-      </div>
-    </div>
+  </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -42,7 +42,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/storybook.js"></script>
   <!-- <script type="text/javascript" src="js/members.js"></script> -->
-  <footer><p>Copyright &copy; 2020: Scrawl</p></footer>
 
 </body>
 

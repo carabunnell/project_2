@@ -21,56 +21,14 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <ul class="nav navbar-nav">
-          <li><a href="/members.html">Home</a></li>
-          <li><a href="/storybook.html">Storybooks</a></li>
+          <li><a href="/storybook.html">Stories</a></li>
+          <li><a href="/cms">New Post</a></li>
+          <li><a href="/authors">Manage Authors</a></li>
           <li><a href="/logout">Logout</a></li>
         </ul>
-        
-                <!-- Button trigger modal -->
-                <span>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                  Create New Post
-                </button>
-
-        
       </div>
     </div>
   </nav>
-
-  <!--bootstrap modal-->
-  <!-- Modal -->
-  <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!--form for creating new storybook-->
-          <form>
-            <div class="form-group">
-              <label class="col-form-label">Storybook Title:</label>
-              <input type="text" class="form-control" id="new-book-title">
-            </div>
-            <div class="form-group">
-              <label class="col-form-label">Description:</label>
-              <textarea class="form-control" id="new-book-describe"></textarea>
-            </div>
-          </form>
-          <!--end form-->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="submit btn btn-primary">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--bootstrap end modal-->
 
   <div class="profile-div">
     <img class="imagefluid" src="https://www.theworldofchinese.com/wp-content/uploads/2019/12/Peak-Season_MB1200.jpg">
@@ -81,17 +39,11 @@
         <br>
         <h1 class="profile-member-welcome">Welcome <span class="member-name"></span></h1>
         <br>
-        <h4>Your StoryBooks</h4>
           <div class="card">
-            <div class="card-header"><a class="btn btn-light" href="/storybook">Adventures</a><button><a class="btn btn-light" href="/cms">New Post</a></button><button>
-              <a class="btn btn-light" href="/authors">View/Edit Authors</a></button></div>
+            <div class="card-header">Stories</div>
             <div class="card-body"></div>
           </div>
           <br>
-          <div class="card">
-            <div class="card-header">Cars, Cars and More Cars (inactive)</div>
-            <div class="card-body"></div>
-          </div>
       </div>
     </div>
   </div>

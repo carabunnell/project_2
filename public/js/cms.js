@@ -1,9 +1,27 @@
 $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
-  var bodyInput = $("#body");
+  //getting all user input 
   var titleInput = $("#title");
-  var cmsForm = $("#cms");
+  var titlePic = $("#title-pic");
+  var bodyInput = $("#bodytext-one");
+  // var bodyTextONE = $("#bodytext-one");
+  var bodyPicONE = $("#bodypic-one");
+  var bodyTextTWO = $("#bodytext-two");
+  var bodyPicTWO = $("#bodypic-two");
+  //selecting author
   var authorSelect = $("#author");
+  //two buttons
+  var previewBtn = $(".preview-btn")
+  var cmsForm = $("#cms");
+  
+  // var writeFileAsynch = util.promisify(fs.writeFile);
+  
+  // function fileCreatePost() {
+  // //function that takes all above variables and puts them in the html file. then creates the file
+  // var fullFile = `html file with stuff like this ${stuff} and yeah.`
+  // var html = createHTML(fullFile);
+  // return writeFileAsynch("html/newpost.html", html)
+  // }
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)

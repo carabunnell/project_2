@@ -9,6 +9,7 @@ module.exports = function(app) {
       include: [db.Stories]
     }).then(function(dbUser) {
       res.json(dbUser);
+      console.log(dbUser);
     });
   });
 

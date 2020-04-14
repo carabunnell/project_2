@@ -1,8 +1,11 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
-
+// var fs = require("fs");
+// var util = require("util");
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+// var writeFileAsynch = util.promisify(fs.writeFile);
+
 
 module.exports = function(app) {
 
@@ -42,5 +45,10 @@ module.exports = function(app) {
   app.get("/authors", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   });
+
+  //view one post. taking in the object, and placing it into the file.
+  // app.get("/viewpost/:" + dbStory, function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/testpost.html"));
+  // });
 
 };

@@ -2,7 +2,7 @@ var db = require("../models");
 var fs = require("fs");
 var util = require("util");
 
-// var writeFileAsynch = util.promisify(fs.writeFile);
+var writeFileAsynch = util.promisify(fs.writeFile);
 
 module.exports = function (app) {
     // POST route for saving a new post

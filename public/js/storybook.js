@@ -77,21 +77,23 @@ $(document).ready(function() {
     // var editBtn = $("<button>");
     // editBtn.text("EDIT");
     // editBtn.addClass("edit btn btn-info");
-    var newPostTitle = $("<h2>");
+    var newPostTitle = $("<a>");
     // var newPostDate = $("<small>");
     var newPostUser = $("<h5>");
-    newPostUser.text("Written by: " + post.User.email);
+    newPostUser.text("By: " + post.User.email);
     newPostUser.css({
       float: "right",
-      color: "blue",
+      color: "grey",
       "margin-top":
       "-10px"
     });
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
-    var newPostBody = $("<p>");
+    var newPostBody = $("<img>");
     newPostTitle.text(post.title + " ");
-    newPostBody.text(post.bodyONE);
+    newPostTitle.attr("href", "/viewpost/:" + newPostTitle);
+    newPostBody.attr("src", post.bodyONE);
+    newPostBody.addClass("image-post imagefluid");
     // newPostDate.text(formattedDate);
     // newPostTitle.append(newPostDate);
     // newPostCardHeading.append(deleteBtn);

@@ -9,7 +9,7 @@ $(document).ready(function () {
   var bodyTextTWO = $("#bodytext-two");
   var bodyPicTWO = $("#bodypic-two");
   //selecting author
-  var authorSelect = 1;
+  var authorSelect = 0;
   //two buttons
   var previewBtn = $(".preview-btn")
   var cmsForm = $("#cms");
@@ -17,7 +17,12 @@ $(document).ready(function () {
   // var userId;
   // var writeFileAsynch = util.promisify(fs.writeFile);
 
-
+  $.get("/api/user_data").then(function (data) {
+    // $(".member-name").text(data.email);
+    authorSelect = data.id;
+    console.log(`user id: ${data.id}`);
+  });
+  
 
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);

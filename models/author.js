@@ -4,13 +4,13 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING
   });
 
-  Author.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-    Author.hasMany(models.Stories, {
-      onDelete: "cascade"
-    });
-  };
+  // Author.associate = function(models) {
+  //   // Associating Author with Posts
+  //   // When an Author is deleted, also delete any associated Posts
+  //   Author.hasMany(models.Stories, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
   return Author;
 };

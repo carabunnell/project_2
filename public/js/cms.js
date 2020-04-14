@@ -1,29 +1,54 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Getting jQuery references to the post body, title, form, and author select
   //getting all user input 
   var titleInput = $("#title");
   var titlePic = $("#title-pic");
-  var bodyInput = $("#bodytext-one");
-  // var bodyTextONE = $("#bodytext-one");
+  // var bodyInput = $("#bodytext-one");
+  var bodyTextONE = $("#bodytext-one");
   var bodyPicONE = $("#bodypic-one");
   var bodyTextTWO = $("#bodytext-two");
   var bodyPicTWO = $("#bodypic-two");
   //selecting author
-  var authorSelect = $("#author");
+  var authorSelect = 1;
   //two buttons
   var previewBtn = $(".preview-btn")
   var cmsForm = $("#cms");
-  
+
+  // var userId;
   // var writeFileAsynch = util.promisify(fs.writeFile);
-  
-  // function fileCreatePost() {
-  // //function that takes all above variables and puts them in the html file. then creates the file
-  // var fullFile = `html file with stuff like this ${stuff} and yeah.`
-  // var html = createHTML(fullFile);
-  // return writeFileAsynch("html/newpost.html", html)
-  // }
+
+
+
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
+  // function formSubmitPost(event) {
+  //   event.preventDefault();
+  //   var newPost = {
+  //     title: titleInput
+  //       .val()
+  //       .trim(),
+  //     body: bodyTextONE
+  //       .val()
+  //       .trim(),
+  //     AuthorId: authorSelect.val()
+  //   };
+  //   submitPost(newPost);
+  //   // var fullFile = `html file with stuff like this ${titleInput} and yeah.`
+  //   // submitfullFile(fullFile);
+  // }
+
+  // function submitPost(post) {
+  //   $.post("/api/posts", post, function() {
+  //     window.location.href = "/storybook";
+  //   });
+  // }
+  // function submitfullFile(htmlfile) {
+
+  // return writeFileAsynch("html/newpost.html", html)
+  // }
+
+
+
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   var url = window.location.search;
   var postId;
@@ -43,13 +68,13 @@ $(document).ready(function() {
   }
 
   // Getting the authors, and their posts
-  getAuthors();
+  // getAuthors();
 
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing a body, title, or author
-    if (!titleInput.val().trim() || !bodyInput.val().trim() || !authorSelect.val()) {
+    if (!titleInput.val().trim() || !bodyTextONE.val().trim() || !authorSelect) {
       return;
     }
     // Constructing a newPost object to hand to the database
@@ -57,26 +82,36 @@ $(document).ready(function() {
       title: titleInput
         .val()
         .trim(),
-      body: bodyInput
+      bodyONE: bodyTextONE
         .val()
         .trim(),
-      AuthorId: authorSelect.val()
-    };
-
-    // If we're updating a post run updatePost to update a post
-    // Otherwise run submitPost to create a whole new post
+        bodyTWO: bodyTextTWO
+        .val()
+        .trim(),
+      UserId: authorSelect
+    }
     if (updating) {
       newPost.id = postId;
       updatePost(newPost);
-    }
-    else {
+    } else {
       submitPost(newPost);
     }
   }
 
+  // If we're updating a post run updatePost to update a post
+  // Otherwise run submitPost to create a whole new post
+  // if (updating) {
+  //   newPost.id = postId;
+  //   updatePost(newPost);
+  // }
+  // else {
+  //   submitPost(newPost);
+  // }
+
+
   // Submits a new post and brings user to blog page upon completion
   function submitPost(post) {
-    $.post("/api/posts", post, function() {
+    $.post("/api/posts", post, function () {
       window.location.href = "/storybook";
     });
   }
@@ -85,16 +120,16 @@ $(document).ready(function() {
   function getPostData(id, type) {
     var queryUrl;
     switch (type) {
-    case "post":
-      queryUrl = "/api/posts/" + id;
-      break;
-    case "author":
-      queryUrl = "/api/authors/" + id;
-      break;
-    default:
-      return;
+      case "post":
+        queryUrl = "/api/posts/" + id;
+        break;
+      case "author":
+        queryUrl = "/api/authors/" + id;
+        break;
+      default:
+        return;
     }
-    $.get(queryUrl, function(data) {
+    $.get(queryUrl, function (data) {
       if (data) {
         console.log(data.AuthorId || data.id);
         // If this post exists, prefill our cms forms with its data
@@ -108,46 +143,46 @@ $(document).ready(function() {
     });
   }
 
-  // A function to get Authors and then render our list of Authors
-  function getAuthors() {
-    $.get("/api/authors", renderAuthorList);
-  }
-  // Function to either render a list of authors, or if there are none, direct the user to the page
-  // to create an author first
-  function renderAuthorList(data) {
-    if (!data.length) {
-      window.location.href = "/authors";
-    }
-    $(".hidden").removeClass("hidden");
-    var rowsToAdd = [];
-    for (var i = 0; i < data.length; i++) {
-      rowsToAdd.push(createAuthorRow(data[i]));
-    }
-    authorSelect.empty();
-    console.log(rowsToAdd);
-    console.log(authorSelect);
-    authorSelect.append(rowsToAdd);
-    authorSelect.val(authorId);
-  }
-//*
-  // Creates the author options in the dropdown
-  function createAuthorRow(author) {
-    var listOption = $("<option>");
-    listOption.attr("value", author.id);
-    listOption.text(author.name);
-    return listOption;
-  }
-//x
-  // Update a given post, bring user to the blog page when done
   function updatePost(post) {
     $.ajax({
-      method: "PUT",
-      url: "/api/posts",
-      data: post
-    })
-      .then(function() {
+        method: "PUT",
+        url: "/api/posts",
+        data: post
+      })
+      .then(function () {
         window.location.href = "/storybook";
       });
   }
 });
-  
+
+// A function to get Authors and then render our list of Authors
+// function getAuthors() {
+//   $.get("/api/authors", renderAuthorList);
+// }
+// Function to either render a list of authors, or if there are none, direct the user to the page
+// to create an author first
+// function renderAuthorList(data) {
+//   if (!data.length) {
+//     window.location.href = "/authors";
+//   }
+//   $(".hidden").removeClass("hidden");
+//   var rowsToAdd = [];
+//   for (var i = 0; i < data.length; i++) {
+//     rowsToAdd.push(createAuthorRow(data[i]));
+//   }
+//   authorSelect.empty();
+//   console.log(rowsToAdd);
+//   console.log(authorSelect);
+//   authorSelect.append(rowsToAdd);
+//   authorSelect.val(authorId);
+// }
+//*
+// Creates the author options in the dropdown
+// function createAuthorRow(author) {
+//   var listOption = $("<option>");
+//   listOption.attr("value", author.id);
+//   listOption.text(author.name);
+//   return listOption;
+// }
+//x
+// Update a given post, bring user to the blog page when done

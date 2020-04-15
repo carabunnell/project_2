@@ -50,3 +50,10 @@ footer {
   width: 100%;
   height: auto;
 }
+.stories-header {
+  color: black;
+  text-decoration: none;
+  font-size-adjust: 20px;
+  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+  font-stretch: expanded;
+}

@@ -90,8 +90,9 @@ $(document).ready(function() {
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
     var newPostBody = $("<img>");
-    newPostTitle.text(post.title + " ");
-    newPostTitle.attr("href", "/viewpost/:" + newPostTitle);
+    newPostTitle.text(post.title);
+    newPostTitle.addClass("stories-header");
+    newPostTitle.attr("href", "/viewpost?post_id=" + post.id + "");
     newPostBody.attr("src", post.bodyONE);
     newPostBody.addClass("image-post imagefluid");
     // newPostDate.text(formattedDate);

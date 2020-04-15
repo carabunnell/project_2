@@ -46,9 +46,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   });
 
-  //view one post. taking in the object, and placing it into the file.
-  // app.get("/viewpost/:" + dbStory, function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/testpost.html"));
-  // });
+  // //view one post. taking in the object, and placing it into the file.
+  app.get("/viewpost", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/testpost.html"));
+  });
 
 };

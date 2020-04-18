@@ -1,13 +1,18 @@
+/* Google Fonts */
+/* @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro); */
+
 form.signup,
 form.login {
   margin-top: 50px;
 }
-  /* this entire style sheet here only contains modal css */
-  /* The Modal (background) */
+
+/* this entire style sheet here only contains modal css */
+/* The Modal (background) */
 .imagefluid {
   width: 100%;
   height: auto;
 }
+
 .profile-member-welcome {
   text-align: center;
 }
@@ -23,6 +28,7 @@ footer {
   position: absolute;
   text-align: center;
 }
+
 /* .custom-file-upload {
   border: 1px solid #ccc;
   display: inline-block;
@@ -42,18 +48,88 @@ footer {
   background-color: #DDD;
   cursor: pointer;
 }
+
 .card {
   width: 50%;
   margin: 20px;
 }
+
 .image-post {
   width: 100%;
   height: auto;
 }
+
 .stories-header {
   color: black;
+  text-align: center;
+  padding: 20px;
   text-decoration: none;
   font-size-adjust: 20px;
   font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
   font-stretch: expanded;
+}
+.header-post {
+  height: 250px;
+}
+.post-text-header {
+  position: relative;
+  bottom: 150px;
+  padding: 5px;
+  /* width: 290px; */
+  /* background-color: blue; */
+  /* opacity: 0.8; */
+  text-align: center;
+  color: white;
+  font-weight: 400;
+
+}
+.post-title {
+  color: white;
+  font-weight: 800;
+}
+.col-md-12 {
+  padding: 0px;
+}
+.imagefluid-header {
+  width: 100%;
+  height: 250px;
+  /* background-color: rgba(15, 15, 13, 0.2);
+  top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%; */
+}
+.imagefluid-one {
+  height: 170px;
+  width: 80%;
+  /* padding: 20px; */
+  /* width: 250px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imagefluid-two {
+  height: 170px;
+  width: 80%;
+  /* padding: 20px; */
+  /* width: 250px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-body-one {
+  /* font-family: 'Anonymous Pro';  */
+  font-family: Courier, monospace;
+  padding: 10px 20px 10px 20px;
+/* letter-spacing: .17em; */
+}
+.post-body-two {
+  /* font-family: 'Anonymous Pro';  */
+  font-family: Courier, monospace;
+    padding: 10px 20px 10px 20px;
+/* letter-spacing: .17em; */
 }

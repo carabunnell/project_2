@@ -33,6 +33,8 @@ $(document).ready(function() {
     });
   }
 
+  //api call for searching for a user. this will be $.get("api/users/:email"). they will search by an email. then the author api will be app.get("api/users:email, function db.User.findOne({where: { id: req.params.id}, include db.Stories. then function(dbUser res.json dbUser"). now it will take that info, and push it to the database. it will take the id of the user and using db.User.update({ it will, push to already exising array in the user file. }). once that happends,, need to adjust the functions to first query 
+
   // Function for creating a new list row for users
   function createUserRow(userData) {
     // console.log("userdata: " + userData.dataValues);

@@ -33,6 +33,15 @@ module.exports = function(sequelize, DataTypes) {
     // When an Author is deleted, also delete any associated Posts
     User.hasMany(models.Stories);
   };
+  
+  // User.associate = function(models) {
+  //   User.hasMany(models.Friends);
+  // }
 
   return User;
 };
+
+// User has many friends
+// Friends can see user's stories
+// Friend is also a user
+

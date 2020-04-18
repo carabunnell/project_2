@@ -67,19 +67,26 @@ $(document).ready(function() {
   function createNewRow(post) {
     // var formattedDate = new Date(post.createdAt);
     // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+    //starts the post div
     var newPostCard = $("<div>");
+    //adds a class
     newPostCard.addClass("card");
+    //starts div adds class
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
-    // var deleteBtn = $("<button>");
-    // deleteBtn.text("x");
-    // deleteBtn.addClass("delete btn btn-danger");
-    // var editBtn = $("<button>");
-    // editBtn.text("EDIT");
-    // editBtn.addClass("edit btn btn-info");
+    //starts buttons, adds text and class
+    var deleteBtn = $("<button>");
+    deleteBtn.text("x");
+    deleteBtn.addClass("delete btn btn-danger");
+    var editBtn = $("<button>");
+    editBtn.text("EDIT");
+    editBtn.addClass("edit btn btn-info");
+    //starts title
     var newPostTitle = $("<a>");
+    //starts user
     // var newPostDate = $("<small>");
     var newPostUser = $("<h5>");
+    //adds text to user and css
     newPostUser.text("By: " + post.User.email);
     newPostUser.css({
       float: "right",
@@ -87,18 +94,20 @@ $(document).ready(function() {
       "margin-top":
       "-10px"
     });
+    //adds card body and class
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
+    //adds image in body with
     var newPostBody = $("<img>");
     newPostTitle.text(post.title);
     newPostTitle.addClass("stories-header");
     newPostTitle.attr("href", "/viewpost?post_id=" + post.id + "");
-    newPostBody.attr("src", post.bodyONE);
+    newPostBody.attr("src", post.imgHeader);
     newPostBody.addClass("image-post imagefluid");
     // newPostDate.text(formattedDate);
     // newPostTitle.append(newPostDate);
-    // newPostCardHeading.append(deleteBtn);
-    // newPostCardHeading.append(editBtn);
+    newPostCardHeading.append(deleteBtn);
+    newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostUser);
     newPostCardBody.append(newPostBody);

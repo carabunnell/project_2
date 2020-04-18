@@ -11,7 +11,7 @@ $(document).ready(function () {
   //selecting author
   var authorSelect = 0;
   //two buttons
-  var previewBtn = $(".preview-btn")
+  // var previewBtn = $(".preview-btn")
   var cmsForm = $("#cms");
 
   // var userId;
@@ -79,7 +79,7 @@ $(document).ready(function () {
   function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing a body, title, or author
-    if (!titleInput.val().trim() || !bodyTextONE.val().trim() || !authorSelect) {
+    if (!titleInput.val().trim() || !titlePic.val().trim() || !bodyTextONE.val().trim() || !authorSelect) {
       return;
     }
     // Constructing a newPost object to hand to the database
@@ -87,10 +87,19 @@ $(document).ready(function () {
       title: titleInput
         .val()
         .trim(),
+      imgHeader: titlePic
+      .val()
+        .trim(),
       bodyONE: bodyTextONE
         .val()
         .trim(),
+        imgBodyONE: bodyPicONE
+        .val()
+        .trim(),
         bodyTWO: bodyTextTWO
+        .val()
+        .trim(),
+        imgBodyTWO: bodyPicTWO
         .val()
         .trim(),
       UserId: authorSelect

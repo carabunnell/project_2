@@ -13,11 +13,25 @@ module.exports = function(app) {
     });
   });
 
+
+  // app.put("/api/users", function(req, res) {
+  //   db.Stories.update(
+  //     req.body,
+  //     {
+  //       where: {
+  //         id: req.body.id
+  //       }
+  //     }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
+
+
   app.get("/api/authors/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
-    db.Author.findOne({
+    db.User.findOne({
       where: {
         id: req.params.id
       },

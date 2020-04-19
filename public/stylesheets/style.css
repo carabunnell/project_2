@@ -48,26 +48,55 @@ footer {
   background-color: #DDD;
   cursor: pointer;
 }
-
-.card {
-  width: 50%;
+/* editing storybook page */
+.storylist-div {
+  width: 250px;
+  height: 250px;
   margin: 20px;
+  float: left;
 }
-
 .image-post {
-  width: 100%;
-  height: auto;
+  width: 250px;
+  height: 250px;
 }
-
-.stories-header {
-  color: black;
+/* aka card */
+.storylist-text-div {
+  color: white;
+  position: relative;
+  bottom: 150px;
+  /* background-color: white; */
+  padding: 5px;
+  font-weight: 900;
   text-align: center;
-  padding: 20px;
-  text-decoration: none;
-  font-size-adjust: 20px;
   font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
   font-stretch: expanded;
+
 }
+.storylist-headers {
+  color: white;
+
+}
+/* a {
+  font-size: 30px;
+} */
+
+.storylist-buttons {
+  position: relative;
+  bottom: 290px;
+  float: right;
+}
+.storylist-delete-btn {
+  background-color: grey;
+}
+
+.storylist-authors {
+  position: relative;
+  bottom: 45px;
+  /* float: left;
+  color:white; */
+  /* background-color: white; */
+}
+
 .header-post {
   height: 250px;
 }

@@ -68,53 +68,78 @@ $(document).ready(function() {
     // var formattedDate = new Date(post.createdAt);
     // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     //starts the post div
+    var bootstrapColumnDiv = $("<div>");
+    bootstrapColumnDiv.addClass("col-md-3");
     var newPostCard = $("<div>");
     //adds a class
-    newPostCard.addClass("card");
+    newPostCard.addClass("storylist-div");
+    //adding image to div body
+    var newPostBodyLink = $("<a>");
+    newPostBodyLink.attr("href", "/viewpost?post_id=" + post.id + "");
+
+    var newPostBody = $("<img>");
+    
+    newPostBody.attr("src", post.imgHeader);
+    // newPostBody.attr("href", "/viewpost?post_id=" + post.id + "");
+    newPostBody.addClass("image-post imagefluid");
     //starts div adds class
     var newPostCardHeading = $("<div>");
-    newPostCardHeading.addClass("card-header");
+    newPostCardHeading.addClass("storylist-text-div");
     //starts buttons, adds text and class
+    var buttonDiv = $("<div>");
+    buttonDiv.addClass("storylist-buttons")
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
-    deleteBtn.addClass("delete btn btn-danger");
-    var editBtn = $("<button>");
-    editBtn.text("EDIT");
-    editBtn.addClass("edit btn btn-info");
-    //starts title
+    deleteBtn.addClass("delete btn btn-danger storylist-delete-btn");
+    // var editBtn = $("<button>");
+    // editBtn.text("EDIT");
+    // editBtn.addClass("edit btn btn-info");
+    //starts title and adds classes etc
     var newPostTitle = $("<a>");
+    newPostTitle.text(post.title);
+    newPostTitle.addClass("storylist-headers");
+    newPostTitle.css({
+      "font-size": "20px"
+    });
+    // newPostTitle.css({
+
+    // });
+    newPostTitle.attr("href", "/viewpost?post_id=" + post.id + "");
     //starts user
     // var newPostDate = $("<small>");
+    var authorDiv = $("<div>");
+    authorDiv.addClass("storylist-authors");
     var newPostUser = $("<h5>");
     //adds text to user and css
     newPostUser.text("By: " + post.User.email);
     newPostUser.css({
       float: "right",
-      color: "grey",
+      color: "white",
       "margin-top":
       "-10px"
     });
     //adds card body and class
-    var newPostCardBody = $("<div>");
-    newPostCardBody.addClass("card-body");
+    // var newPostCardBody = $("<div>");
+    // newPostCardBody.addClass("card-body");
     //adds image in body with
-    var newPostBody = $("<img>");
-    newPostTitle.text(post.title);
-    newPostTitle.addClass("stories-header");
-    newPostTitle.attr("href", "/viewpost?post_id=" + post.id + "");
-    newPostBody.attr("src", post.imgHeader);
-    newPostBody.addClass("image-post imagefluid");
+   
     // newPostDate.text(formattedDate);
     // newPostTitle.append(newPostDate);
-    newPostCardHeading.append(deleteBtn);
-    newPostCardHeading.append(editBtn);
+    buttonDiv.append(deleteBtn);
+    // buttonDiv.append(editBtn);
     newPostCardHeading.append(newPostTitle);
-    newPostCardHeading.append(newPostUser);
-    newPostCardBody.append(newPostBody);
-    newPostCard.append(newPostCardHeading);
-    newPostCard.append(newPostCardBody);
-    newPostCard.data("post", post);
-    return newPostCard;
+    authorDiv.append(newPostUser);
+    
+    newPostBodyLink.append(newPostBody);
+    // newPostCardBody.append(newPostBody);
+    newPostBodyLink.append(newPostCardHeading);
+    newPostBodyLink.append(buttonDiv);
+    newPostBodyLink.append(authorDiv);
+    newPostCard.append(newPostBodyLink);
+    bootstrapColumnDiv.append(newPostCard);
+    // newPostCard.append(newPostCardBody);
+    bootstrapColumnDiv.data("post", post);
+    return bootstrapColumnDiv;
   }
 
   // This function figures out which post we want to delete and then calls deletePost

@@ -5,16 +5,46 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-
+li {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.navbar-default .navbar-nav>li>a {
+  color:teal;
+  font-size: 15px;
+}
 /* this entire style sheet here only contains modal css */
 /* The Modal (background) */
 .imagefluid {
   width: 100%;
   height: auto;
 }
-
+.profile-div {
+  background-image: url("photo-1457369804613-52c61a468e7d.jpg");
+   background-size: cover;
+   width: 100%;
+   height: 500px;
+   /* background-position: right; */
+}
+.memberdiv-transparent {
+  /* background-color: rgba(15, 15, 13, 0.4); */
+  background-color: rgb(255, 255, 251, 0.4);
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.member-welcome-text {
+  position: relative;
+  top: 200px;
+  color: teal;
+  /* bottom: 150px; */
+}
 .profile-member-welcome {
   text-align: center;
+  /* color: teal; */
+  /* color: black; */
+  /* position: relative; */
+  /* bottom: 150px; */
 }
 
 .nav {
@@ -97,6 +127,9 @@ footer {
   /* background-color: white; */
 }
 
+/* .image-post:hover {
+  background-color: black;
+} */
 .header-post {
   height: 250px;
 }
@@ -110,7 +143,6 @@ footer {
   text-align: center;
   color: white;
   font-weight: 400;
-
 }
 .post-title {
   color: white;

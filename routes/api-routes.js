@@ -121,16 +121,29 @@ module.exports = function (app) {
     });
   });
 
-  // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function(req, res) {
-    db.Stories.destroy({
-      where: {
-        id: req.params.id
+  //post route for adding a new storybook
+  app.post("/api/newbook", function(req, res) {
+    var query = {};
+      if (req.query.user_id) {
+        query.userId = req.query.user_id;
       }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
+      db.Storybook.create(req.body).then(function(dbStorybook){
+        res.json(dbStorybook);
+        console.log(dbStorybook);
+      });
   });
+  //POST for saving a new post to a storybook
+  // app.post("/api/")
+  // // DELETE route for deleting posts
+  // app.delete("/api/posts/:id", function(req, res) {
+  //   db.Stories.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
   
   // PUT route for updating posts
   app.put("/api/posts", function(req, res) {

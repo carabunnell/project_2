@@ -10,6 +10,7 @@ $(document).ready(function () {
   var bodyPicTWO = $("#bodypic-two");
   //selecting author
   var authorSelect = 0;
+  var storybookTemp = 0;
   //two buttons
   // var previewBtn = $(".preview-btn")
   var cmsForm = $("#cms");
@@ -79,7 +80,7 @@ $(document).ready(function () {
   function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing a body, title, or author
-    if (!titleInput.val().trim() || !titlePic.val().trim() || !bodyTextONE.val().trim() || !authorSelect) {
+    if (!titleInput.val().trim() || !titlePic.val().trim() || !bodyTextONE.val().trim() || !authorSelect || !storybookTemp) {
       return;
     }
     // Constructing a newPost object to hand to the database
@@ -102,7 +103,8 @@ $(document).ready(function () {
         imgBodyTWO: bodyPicTWO
         .val()
         .trim(),
-      UserId: authorSelect
+      UserId: authorSelect,
+      StorybookId: storybookTemp
     }
     if (updating) {
       newPost.id = postId;

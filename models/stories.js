@@ -1,4 +1,4 @@
-
+  
 // Creating our Storybook model
 module.exports = function(sequelize, DataTypes) {
   var Stories = sequelize.define("Stories", {
@@ -7,22 +7,22 @@ module.exports = function(sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      // validate: {
+      //   len: [1]
+      // }
     },
     imgHeader: {
       type: DataTypes.TEXT,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      // validate: {
+      //   len: [1]
+      // }
     },
     //first body with text and optional image
     bodyONE: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [1]
+      // len: [1]
     },
     imgBodyONE: {
       type: DataTypes.TEXT,
@@ -43,6 +43,11 @@ module.exports = function(sequelize, DataTypes) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
     Stories.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Stories.belongsTo(models.Storybook, {
       foreignKey: {
         allowNull: false
       }

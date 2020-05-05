@@ -29,6 +29,7 @@ $(document).ready(function() {
       password: password
     })
       .then(function() {
+        console.log("made it past login");
         window.location.replace("/members");
         // If there's an error, log the error
       })

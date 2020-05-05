@@ -12,6 +12,10 @@ li {
   color:teal;
   font-size: 15px;
 }
+.navbar {
+  margin: 0px;
+  border-color: rgb(158, 199, 146);
+}
 /* this entire style sheet here only contains modal css */
 /* The Modal (background) */
 .imagefluid {
@@ -22,7 +26,7 @@ li {
   background-image: url("photo-1457369804613-52c61a468e7d.jpg");
    background-size: cover;
    width: 100%;
-   height: 500px;
+   height: 200px;
    /* background-position: right; */
 }
 .memberdiv-transparent {
@@ -35,7 +39,7 @@ li {
 }
 .member-welcome-text {
   position: relative;
-  top: 200px;
+  top: 85px;
   color: teal;
   /* bottom: 150px; */
 }
@@ -79,6 +83,9 @@ footer {
   cursor: pointer;
 }
 /* editing storybook page */
+/* .col-md-3 {
+  float: left;
+} */
 .storylist-div {
   width: 250px;
   height: 250px;

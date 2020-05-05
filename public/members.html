@@ -38,12 +38,56 @@
       </div>
     </div>
   </div>
+
+<!--bootstrap modal-->
+  <!-- Modal -->
+  <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--form for creating new storybook-->
+          <form>
+            <div class="form-group">
+              <label class="col-form-label">Storybook Title:</label>
+              <input type="text" class="form-control" id="new-book-title">
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Description:</label>
+              <textarea class="form-control" id="new-book-describe"></textarea>
+            </div>
+          </form>
+          <!--end form-->
+        </div>
+        <div class="modal-footer">
+          <div class="modal-success-div"></div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="submit btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--bootstrap end modal-->
+
+
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <br>
         <!-- <h1 class="profile-member-welcome">Welcome <span class="member-name"></span></h1> -->
         <br>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Create a StoryBook
+        </button>
+        <br>
+        <div class="storybooks-list-div"></div>
         <br>
       </div>
     </div>

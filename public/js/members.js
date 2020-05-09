@@ -15,15 +15,16 @@ $(document).ready(function () {
   //variable to hold our storybooks
   var storybooksHold;
     // pass in user id to function to populate the user's storbooks
-  getStorybooks(authorOf);
+  getStorybooks();
 
   //looks for the user id, and the storybooks associated with them.
   function getStorybooks() {
     $.get("api/storybooks", function(data) {
       console.log("Storybooks", data)
       storybooksHold = data;
+      // for (var i = 0; i < )
       initilizeBooks(storybooksHold);
-    })
+    });
   }
   
   // function getStorybooks(userId) {
@@ -102,12 +103,16 @@ $(document).ready(function () {
     var bookObject;
     for (var i = 0; i < booksArray.length; i++) {
       bookObject = booksArray[i];
-      console.log("book object", bookObject);
+      // console.log("book object", bookObject);
+      console.log("authorOf", authorOf);
+      if (bookObject.UserId === authorOf) {
+        booksAdd.push(createNewCard(bookObject));
+      }
       // createNewCard(bookObject);
       // console.log(booksArray[i]);
-      booksAdd.push(createNewCard(bookObject));
+      // booksAdd.push(createNewCard(bookObject));
     }
-    console.log("booksAdd", booksAdd);
+    // console.log("booksAdd", booksAdd);
     storybookDiv.append(booksAdd);
   }
 

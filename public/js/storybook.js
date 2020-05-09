@@ -5,7 +5,7 @@ $(document).ready(function() {
     var blogContainer = $(".blog-container");
     var postCategorySelect = $("#category");
     // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handlePostDelete);
+  $(document).on("click", "story-delete-btn", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
     // Variable to hold our posts
     var posts;
@@ -91,7 +91,7 @@ $(document).ready(function() {
     buttonDiv.addClass("storylist-buttons")
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
-    deleteBtn.addClass("delete btn btn-danger storylist-delete-btn");
+    deleteBtn.addClass("delete story-delete-btn btn btn-danger storylist-delete-btn");
     // var editBtn = $("<button>");
     // editBtn.text("EDIT");
     // editBtn.addClass("edit btn btn-info");
@@ -145,10 +145,12 @@ $(document).ready(function() {
 
   // This function figures out which post we want to delete and then calls deletePost
   function handlePostDelete() {
+    console.log("made it to delete");
     var currentPost = $(this)
       .parent()
       .parent()
       .data("post");
+      console.log("currentPost:", currentPost);
     deletePost(currentPost.id);
   }
   // This function figures out which post we want to edit and takes it to the appropriate url

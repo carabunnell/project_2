@@ -201,3 +201,13 @@ footer {
     padding: 10px 20px 10px 20px;
 /* letter-spacing: .17em; */
 }
+
+
+/* member page card appending classes */
+.card {
+  margin: 5px 5px 5px 5px;
+}
+
+.new-post-btn {
+  float: right;
+}

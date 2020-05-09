@@ -73,6 +73,10 @@ $(document).ready(function () {
     var bookTitle = $("<a>");
     bookTitle.text(book.name);
     bookTitle.attr("href", "/storybook");
+    var newPostBtn = $("<a>");
+    newPostBtn.text("New Post");
+    // newPostBtn.attr("href", "")
+    newPostBtn.addClass("new-post-btn")
     var bookHeaderDiv = $("<div>");
     bookHeaderDiv.addClass("card-header");
     var bookDescribe = $("<div>");
@@ -82,6 +86,8 @@ $(document).ready(function () {
     fullBookCard.addClass("card");
     // appending the title to the header
     bookHeaderDiv.append(bookTitle);
+    //append new post to header
+    bookHeaderDiv.append(newPostBtn);
     //appending the header to the card
     fullBookCard.append(bookHeaderDiv);
     //appending the body to the card

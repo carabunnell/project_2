@@ -132,6 +132,47 @@ module.exports = function (app) {
         console.log(dbStorybook);
       });
   });
+
+  //temp get route for retrieving all of the storybooks
+  app.get("/api/storybooks", function(req, res) {
+    db.Storybook.findAll({
+      include: [db.User]
+    }).then(function(dbBooks) {
+      res.json(dbBooks);
+    })
+
+
+
+  // // GET route for getting all of the posts
+  // app.get("/api/posts", function(req, res) {
+  //   var query = {};
+  //   if (req.query.user_id) {
+  //     query.UserId = req.query.user_id;
+  //   }
+  //   // Here we add an "include" property to our options in our findAll query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, just db.User
+  //   db.Stories.findAll({
+  //     where: query,
+  //     include: [db.User]
+  //   }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
+
+
+
+  })
+  app.get("/api/storybooks/:id", function(req, res) {
+    db.Storybook.findOne({
+      where: {
+        id: req.params.UserId
+      },
+      include: [db.User]
+    }).then(function(dbBook) {
+      res.json(dbBook);
+    });
+  });
   //POST for saving a new post to a storybook
   // app.post("/api/")
   // // DELETE route for deleting posts

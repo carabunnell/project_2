@@ -10,7 +10,7 @@ $(document).ready(function () {
   var bodyPicTWO = $("#bodypic-two");
   //selecting author
   var authorSelect = 0;
-  var storybookTemp = 0;
+  var storybookTemp = 2;
   //two buttons
   // var previewBtn = $(".preview-btn")
   var cmsForm = $("#cms");
@@ -81,8 +81,10 @@ $(document).ready(function () {
     event.preventDefault();
     // Wont submit the post if we are missing a body, title, or author
     if (!titleInput.val().trim() || !titlePic.val().trim() || !bodyTextONE.val().trim() || !authorSelect || !storybookTemp) {
+      console.log("we're here", titleInput.val(), authorSelect, storybookTemp);
       return;
     }
+    console.log("made it here", titleInput.val(), authorSelect, storybookTemp);
     // Constructing a newPost object to hand to the database
     var newPost = {
       title: titleInput

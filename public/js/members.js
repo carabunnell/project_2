@@ -11,26 +11,35 @@ $(document).ready(function () {
   var bookTitle = $("#new-book-title");
   var bookDescribe = $("#new-book-describe");
     //div to hold storybooks
-    var storybookDiv = $(".storybooks-list-div");
+  var storybookDiv = $(".storybooks-list-div");
   //variable to hold our storybooks
   var storybooksHold;
     // pass in user id to function to populate the user's storbooks
   getStorybooks(authorOf);
 
   //looks for the user id, and the storybooks associated with them.
-  function getStorybooks(userId) {
-    console.log("inside function id: " + userId)
-    userId = "/?user_id=" + userId;
-    $.get("api/storybooks" + userId, function(data) {
-      console.log("Storybooks", data);
+  function getStorybooks() {
+    $.get("api/storybooks", function(data) {
+      console.log("Storybooks", data)
       storybooksHold = data;
-      // if (!storybooksHold || !storybooksHold.length) {
-      //   memberEmpty(userId);
-      // }
-      // else {
-        initilizeBooks(data);
+      initilizeBooks(storybooksHold);
     })
   }
+  
+  // function getStorybooks(userId) {
+  //   console.log(`user id: ${userId}`)
+  //   userId = "/?user_id=" + userId;
+  //   $.get("api/storybooks" + userId, function(data) {
+  //     console.log("Storybooks", data);
+  //     storybooksHold = data;
+  //     if (!storybooksHold || !storybooksHold.length) {
+  //       console.log("no stories to display");
+  //     }
+  //     else {
+  //       initilizeBooks(data);
+  //     }
+  //   });
+  // }
   //when the submit button is clicked, we validate the sections are not blank
   submitbook.on("click", function(event) {
     event.preventDefault();
@@ -59,6 +68,8 @@ $(document).ready(function () {
   });
   
   function createNewCard(book) {
+    console.log("book inside", book);
+    console.log("book.name", book.name);
     var bookTitle = $("<a>");
     bookTitle.text(book.name);
     bookTitle.attr("href", "/storybook");
@@ -69,28 +80,38 @@ $(document).ready(function () {
     bookDescribe.addClass("card-body");
     var fullBookCard = $("<div>");
     fullBookCard.addClass("card");
-
+    // appending the title to the header
     bookHeaderDiv.append(bookTitle);
+    //appending the header to the card
     fullBookCard.append(bookHeaderDiv);
+    //appending the body to the card
     fullBookCard.append(bookDescribe);
+    return fullBookCard;
   }
 
   function initilizeBooks(booksArray) {
+    console.log("books", booksArray);
     storybookDiv.empty();
     var booksAdd = [];
+    var bookObject;
     for (var i = 0; i < booksArray.length; i++) {
-      booksAdd.push(createNewCard(booksArray[i]));
+      bookObject = booksArray[i];
+      console.log("book object", bookObject);
+      // createNewCard(bookObject);
+      // console.log(booksArray[i]);
+      booksAdd.push(createNewCard(bookObject));
     }
+    console.log("booksAdd", booksAdd);
     storybookDiv.append(booksAdd);
   }
 
-  $(".users-storybook").on("click", function() {
+//   $(".users-storybook").on("click", function() {
 
-  });
-//btn to create the user's story. This button will be moved once
-  $(".create-story-temp-btn").on("click", function() {
+//   });
+// //btn to create the user's story. This button will be moved once
+//   $(".create-story-temp-btn").on("click", function() {
 
-  });
+//   });
   //does a post to the submit route. if succesful, we are redirected to the members page // otherwise we log any errors
   function newbook(title, description, authorId) {
     $.post("/api/newbook", {

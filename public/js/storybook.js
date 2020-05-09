@@ -17,6 +17,7 @@ $(document).ready(function() {
   if (url.indexOf("?user_id=") !== -1) {
     userId = url.split("=")[1];
     getPosts(userId);
+    console.log(userId);
   }
   // If there's no userId we just get all posts as usual
   else {

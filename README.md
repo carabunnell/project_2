@@ -24,4 +24,6 @@ Jaycee Bagtas
 * Bulma/Materialize/BootStrap
 
 ## DEPLOYMENT
+Click here to visit live app: https://writersblawk.herokuapp.com/ 
+
 Jaycee is working with a volunteer organization, SchoolClosures.org, to see if our team can deploy the finished app on their website as part of their effort to help ease the transition that families are facing while being quarantined during the COVID-19 pandemic.
